@@ -1,0 +1,102 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background: #131321;
+  animation: fadeIn 1.5s; }
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #19192B;
+  padding: 20px; }
+
+input {
+  outline: none;
+  border: none;
+  font-size: 15px;
+  border-radius: 4px;
+  box-shadow: none;
+  transition: .35s ease;
+  -webkit-appearance: none;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  background-color: #131321;
+  background-image: none;
+  height: 40px;
+  margin-bottom: 10px;
+  color: #fff; }
+  input:checked {
+    background: red; }
+
+label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ccc;
+  display: block; }
+
+#add_input {
+  outline: none;
+  border: none;
+  background: none;
+  color: #EC2C3F;
+  cursor: pointer; }
+
+button[type=submit] {
+  width: 100%;
+  background-color: #1F1F31;
+  border: none;
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 12px 5px;
+  transition: .35s ease;
+  font-size: 16px;
+  outline: none; }
+
+.data-block {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .data-block input {
+    width: 49%; }
+
+.form-item {
+  margin-bottom: 15px; }
+
+.form-method {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .form-method > button {
+    outline: none;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    box-shadow: none;
+    transition: .35s ease;
+    -webkit-appearance: none;
+    width: 49%;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    background-color: #131321;
+    height: 40px;
+    margin-bottom: 10px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .form-method > button.active {
+      background: #1F1F31; }
+
+/*# sourceMappingURL=index.css.map */

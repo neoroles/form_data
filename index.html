@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<form id="app" :method="form_method" :action="action">
+    <div class="form-item">
+        <label>Request URL</label>
+        <input v-model="action" placeholder="Address (http/https)" required>
+    </div>
+    <div class="form-item">
+        <label>Request Method</label>
+        <div class="form-method">
+            <button type="button" v-for="method in methods"
+                    :class="{ 'active': form_method === method.name }"
+                    class="method_button"
+                    @click="form_method = method.name">
+                {{method.name }}
+            </button>
+        </div>
+    </div>
+
+    <div class="form-item">
+        <label>Form Data</label>
+        <div class="data-block" v-for="input in inputs">
+            <input v-model="input.name" placeholder="Name">
+            <input :name="input.name" placeholder="Value">
+        </div>
+        <button @click="addInput" id="add_input" type="button">+ Add input</button>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            inputs: [{
+                name: '',
+                val: '',
+            }],
+
+            methods: [
+                { name: 'POST' },
+                { name: 'GET' },
+            ],
+
+            form_method: 'POST',
+            action: '',
+        },
+        methods: {
+            addInput() {
+                this.inputs.push({
+                    name: '',
+                    val: '',
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>
