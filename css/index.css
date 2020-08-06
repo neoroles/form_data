@@ -72,11 +72,11 @@ button[type=submit] {
 .form-item {
   margin-bottom: 20px; }
 
-.form-method {
+.select {
   display: flex;
   align-items: center;
   justify-content: space-between; }
-  .form-method > button {
+  .select > button {
     outline: none;
     border: none;
     font-size: 16px;
@@ -95,7 +95,7 @@ button[type=submit] {
     display: flex;
     align-items: center;
     justify-content: center; }
-    .form-method > button.active {
+    .select > button.active {
       background: #1F1F31; }
 
 /*# sourceMappingURL=index.css.map */

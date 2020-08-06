@@ -7,23 +7,33 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<form id="app" :method="form_method" :action="action">
+<form id="app" :method="form_method" :action="action" :enctype="form_enctype">
     <div class="form-item">
         <label>Request URL</label>
         <input v-model="action" placeholder="Address (http/https)" required>
     </div>
     <div class="form-item">
         <label>Request Method</label>
-        <div class="form-method">
+        <div class="select">
             <button type="button" v-for="method in methods"
                     :class="{ 'active': form_method === method.name }"
                     class="method_button"
                     @click="form_method = method.name">
-                {{method.name }}
+                {{ method.name }}
             </button>
         </div>
     </div>
-
+    <div class="form-item">
+        <label>Enctype</label>
+        <div class="select">
+            <button type="button" v-for="enctype in enctypes"
+                    :class="{ 'active': form_enctype === enctype.name }"
+                    class="method_button"
+                    @click="form_enctype = enctype.name">
+                {{ enctype.name }}
+            </button>
+        </div>
+    </div>
     <div class="form-item">
         <label>Form Data</label>
         <div class="data-block" v-for="input in inputs">
@@ -50,7 +60,13 @@
                 { name: 'GET' },
             ],
 
+            enctypes: [
+                { name: 'application/x-www-form-urlencoded' },
+                { name: 'multipart/form-data' },
+            ],
+
             form_method: 'POST',
+            form_enctype: 'application/x-www-form-urlencoded',
             action: '',
         },
         methods: {
